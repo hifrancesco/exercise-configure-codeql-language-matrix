@@ -7,6 +7,12 @@ on:
 jobs:
   CodeQL-Build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'python']
+        # supported languages
+        # https://codeql.github.com/docs/codeql-overview/supported-languages-and-frameworks/
 
     permissions:
       # required for all workflows
